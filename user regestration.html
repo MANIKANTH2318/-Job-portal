@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - JobPortal</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f9fafb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .register-container {
+            width: 100%;
+            max-width: 450px;
+            padding: 1.5rem;
+        }
+
+        .register-box {
+            background-color: #ffffff;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            border: 1px solid #e5e7eb;
+        }
+
+        .register-box h2 {
+            font-size: 1.75rem;
+            color: #111827;
+            margin-bottom: 0.25rem;
+        }
+
+        .register-box > p {
+            color: #6b7280;
+            font-size: 0.9rem;
+            margin-bottom: 1.75rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #4b5563;
+            margin-bottom: 0.4rem;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: #111827;
+            outline: none;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            border-color: #4f46e5;
+            box-shadow: 0 0 0 1px #4f46e5;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background-color: #4f46e5;
+            color: white;
+            border: none;
+            padding: 0.75rem;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            margin-top: 0.5rem;
+        }
+
+        .btn-submit:hover {
+            background-color: #4338ca;
+        }
+
+        .login-text {
+            margin-top: 1.5rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #6b7280;
+        }
+
+        .login-text a {
+            color: #4f46e5;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .login-text a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="register-container">
+        <div class="register-box">
+            <h2>Create an Account</h2>
+            <p>Join thousands of professionals and employers today.</p>
+            
+            <form>
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" placeholder="Jane Doe" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="jane@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="userRole">I am a</label>
+                    <select id="userRole" onchange="toggleUploadField()">
+                        <option value="job_seeker">Job Seeker</option>
+                        <option value="employer">Employer</option>
+                    </select>
+                </div>
+
+                <div class="form-group" id="resumeGroup">
+                    <label for="resume">Upload Resume / CV</label>
+                    <input type="file" id="resume">
+                </div>
+
+                <div class="form-group" id="companyGroup" style="display: none;">
+                    <label for="companyName">Company Name</label>
+                    <input type="text" id="companyName" placeholder="Acme Corp">
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+
+                <button type="button" class="btn-submit" onclick="alert('Registration successful!')">Register Account</button>
+            </form>
+
+            <p class="login-text">Already have an account? <a href="#">Login here</a></p>
+        </div>
+    </div>
+
+    <script>
+        function toggleUploadField() {
+            const role = document.getElementById('userRole').value;
+            const resumeGroup = document.getElementById('resumeGroup');
+            const companyGroup = document.getElementById('companyGroup');
+
+            if (role === 'job_seeker') {
+                resumeGroup.style.display = 'block';
+                companyGroup.style.display = 'none';
+            } else {
+                resumeGroup.style.display = 'none';
+                companyGroup.style.display = 'block';
+            }
+        }
+    </script>
+
+</body>
+</html>
