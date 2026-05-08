@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: #f1f5f9; color: #1e293b; padding: 2rem; }
+
+        /* 1. Statistics Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+        }
+
+        .stat-card span { font-size: 0.85rem; color: #64748b; font-weight: 600; text-transform: uppercase; }
+        .stat-card h3 { font-size: 2rem; margin-top: 0.5rem; color: #0f172a; }
+        .stat-card .trend { font-size: 0.8rem; margin-top: 0.5rem; font-weight: 600; }
+        .up { color: #10b981; } /* Green for growth */
+
+        /* 2. Main Content Area */
+        .dashboard-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .chart-placeholder {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94a3b8;
+            font-weight: 600;
+        }
+
+        .recent-activity {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .recent-activity h4 { margin-bottom: 1rem; font-size: 1.1rem; }
+        .activity-item { 
+            padding: 0.75rem 0; 
+            border-bottom: 1px solid #f1f5f9; 
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <h2 style="margin-bottom: 1.5rem;">Dashboard Overview</h2>
+
+    <div class="stats-grid">
+        <div class="stat-card">
+            <span>Total Jobs</span>
+            <h3>124</h3>
+            <p class="trend up">↑ 12% this week</p>
+        </div>
+        <div class="stat-card">
+            <span>Active Users</span>
+            <h3>1,205</h3>
+            <p class="trend up">↑ 5% this month</p>
+        </div>
+        <div class="stat-card">
+            <span>Applications</span>
+            <h3>452</h3>
+            <p class="trend">Stable performance</p>
+        </div>
+    </div>
+
+    <div class="dashboard-content">
+        <div class="chart-placeholder">
+            [ Job Application Growth Chart - Integrate Chart.js here ]
+        </div>
+
+        <div class="recent-activity">
+            <h4>Recent Activity</h4>
+            <div class="activity-item"><strong>New Job:</strong> Frontend Dev at Google</div>
+            <div class="activity-item"><strong>New User:</strong> John Doe registered</div>
+            <div class="activity-item"><strong>Application:</strong> 5 new for UI Designer</div>
+            <div class="activity-item"><strong>System:</strong> Database backup complete</div>
+        </div>
+    </div>
+
+</body>
+</html>
